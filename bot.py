@@ -17,7 +17,7 @@ logfile_name = bot_username + ".log"
 character = ["Captain Kirk", "Commander Spock", "James T Kirk", "Spock", "Bones", "Leonard McCoy", "Doctor McCoy",
               "Montgomery Scott", "Scotty", "Lt. Commander Scott", "Hikaru Sulu", "Sulu", "Lt. Sulu", "Chekov",
               "Lt. Chekov", "Pavel Chekov", "Uhura", "Lt. Uhura", "Nyota Uhura", "Nurse Chapel", "Christine Chapel",
-              "USS Enterprise", "the Enterprise"]
+              "the USS Enterprise", "the Enterprise"]
 
 # list of series for the bot to draw from
 series = ["Star Trek", "Star Trek: The Original Series"]
@@ -25,7 +25,7 @@ series = ["Star Trek", "Star Trek: The Original Series"]
 
 # list of plot-building events to make the tweet amusing
 plot = ["contracted a disease that makes them speak exclusively in limericks", "technobabel",
-        "find the meaning of life", "initiate first contact with a strange planet",
+        "find the meaning of life", "initiates first contact with a strange planet",
         "get their can opener stolen by gremlin", "get ransomed for one cheese cracker",
         "enlist a small militia of raccoons", "is only able to eat spaghetti for rest of their life",
         "must peel every grape they encounter", "gets strange looks from birds",
@@ -37,17 +37,11 @@ solution = ["bargain for a pair of ceremonial underpants", "kill it", "get drunk
             "swear off cheese", "make a grass crown", "fight a tree"]
 
 random.seed()  # we're doing some randomization
-series_choice = random.randint(0, -1)   # variable to choose which series to tweet
-character_choice = random.randint(0, -1)  # variable to choose which character to tweet
-plot_choice = random.randint(0, -1)  # variable to choose which plot to tweet
-solution_choice = random.randint(0, -1)  # variable to choose which solution to tweet
+series_choice = random.randint(0, len(series) - 1)   # variable to choose which series to tweet
+character_choice = random.randint(0, len(character) - 1)  # variable to choose which character to tweet
+plot_choice = random.randint(0, len(plot) - 1)  # variable to choose which plot to tweet
+solution_choice = random.randint(0, len(solution) - 1)  # variable to choose which solution to tweet
 
-have_to = random.randint(0, 1)  # pseudo bool to decide if "have to" is included in the tweet
-
-if have_to == 0:
-    tweet_bool = " have to "
-else:
-    tweet_bool = " "
 
 
 def create_tweet():
@@ -58,7 +52,7 @@ def create_tweet():
     # <plot> and <have to> <solution>
 
 
-    text = "In this episode of " + series[series_choice] + " " + character[character_choice] + " " + plot[plot_choice] + tweet_bool + solution[solution_choice]
+    text = "In this episode of " + series[series_choice] + " " + character[character_choice] + " " + plot[plot_choice] + " and has to " + solution[solution_choice]
     return text
 
 
