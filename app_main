@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.umkc.lkull.spam_bot.main"
+    style="@style/AppTheme">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome to SpamBot!"
+        android:textSize="30dp"
+        android:id="@+id/welcom"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="What kind of tweet would you like to make?"
+        android:id="@+id/question_intro"
+        android:layout_below="@+id/welcom"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TWEET"
+        android:id="@+id/tweet_button"
+        android:textSize="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/welcom"
+        android:layout_alignEnd="@+id/welcom"
+        android:layout_alignLeft="@+id/welcom"
+        android:layout_alignStart="@+id/welcom" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Star Trek Episode"
+        android:textSize="18dp"
+        android:id="@+id/trek_box"
+        android:layout_marginTop="69dp"
+        android:checked="true"
+        android:layout_below="@+id/question_intro"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="News Report"
+        android:textSize="18dp"
+        android:id="@+id/news_box"
+        android:layout_below="@+id/trek_box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Self-Aware Bot"
+        android:textSize="18dp"
+        android:id="@+id/aware_bot"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/news_box"
+        android:layout_centerHorizontal="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random"
+        android:textSize="18dp"
+        android:id="@+id/random_box"
+        android:layout_below="@+id/aware_bot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other"
+        android:textSize="18dp"
+        android:id="@+id/other_box"
+        android:layout_below="@+id/random_box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:checked="false" />
+</RelativeLayout>
